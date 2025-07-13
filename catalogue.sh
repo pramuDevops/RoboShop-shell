@@ -1,7 +1,7 @@
 dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
 dnf install nodejs -y
-cp catalogue.repo /etc/systemd/system/catalogue.service
+cp catalogue.service /etc/systemd/system/catalogue.service
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 useradd roboshop
 mkdir /app
@@ -11,6 +11,6 @@ unzip /tmp/catalogue.zip
 cd /app
 npm install
 dnf install mongodb-mongosh -y
-mongosh --host mongodb.dev.pradevops.shop</app/db/master-data.js
+mongosh --host mongodb-dev.pradevops.shop</app/db/master-data.js
 systemctl enable catalogue
 systemctl start catalogue
